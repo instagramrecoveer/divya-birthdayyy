@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Divya 🎂</title>
+<style>
+:root{--pink:#ff6fae;--purple:#a78bfa;--gold:#ffd166;--ink:#fff8ff}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;overflow-x:hidden;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink);background:radial-gradient(circle at 50% 15%,#493071 0,#211638 42%,#100d20 100%);display:flex;align-items:center;justify-content:center;padding:22px}
+.starfield,.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:white;opacity:.65;animation:twinkle 2.5s infinite alternate}
+@keyframes twinkle{to{opacity:.12;transform:scale(.5)}}
+.card{width:min(680px,100%);text-align:center;position:relative;padding:clamp(22px,5vw,42px) 20px 30px;border:1px solid #ffffff25;border-radius:30px;background:linear-gradient(145deg,#ffffff12,#ffffff05);box-shadow:0 20px 80px #0005;backdrop-filter:blur(8px)}
+.pill{display:inline-block;border:1px solid #ffffff35;border-radius:999px;padding:7px 14px;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#fbd6ec}
+h1{font-size:clamp(2.5rem,9vw,4.8rem);line-height:1.02;margin:18px 0 8px;background:linear-gradient(90deg,#fff,#ffb9da,#ffe49b);background-clip:text;color:transparent}
+.subtitle{color:#e8d9f5;margin:0 auto 22px;max-width:460px}
+.scene{height:290px;position:relative;display:flex;align-items:flex-end;justify-content:center;margin:0 auto 15px;max-width:440px}
+.cake-wrap{position:relative;width:270px;height:220px;transform-origin:50% 100%;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+.plate{position:absolute;bottom:8px;left:15px;width:240px;height:23px;border-radius:50%;background:linear-gradient(#fff8ff,#d9c7f3);box-shadow:0 8px 20px #0005}
+.layer{position:absolute;left:35px;width:200px;border-radius:13px 13px 18px 18px;box-shadow:inset 0 -8px 0 #00000010}
+.bottom{bottom:27px;height:68px;background:linear-gradient(90deg,#d94c91,#ff91bd 45%,#e95b9b)}
+.middle{bottom:83px;height:62px;left:47px;width:176px;background:linear-gradient(90deg,#ffd7e8,#fff0f6 50%,#ffc9e0)}
+.icing{position:absolute;left:46px;bottom:126px;width:178px;height:22px;border-radius:50%;background:#fff2fa;box-shadow:0 5px 0 #ffb6d5}
+.drip{position:absolute;top:11px;width:17px;height:22px;border-radius:0 0 12px 12px;background:#fff2fa}
+.drip:nth-child(1){left:24px;height:18px}.drip:nth-child(2){left:65px;height:27px}.drip:nth-child(3){left:117px;height:20px}.drip:nth-child(4){left:151px;height:25px}
+.candle{position:absolute;bottom:145px;left:126px;width:17px;height:52px;border-radius:5px 5px 2px 2px;background:repeating-linear-gradient(135deg,#fff 0 7px,#ff70ad 7px 13px);z-index:3;box-shadow:0 0 0 1px #ffffff50}
+.flame{position:absolute;left:128px;bottom:194px;width:14px;height:23px;background:radial-gradient(ellipse at 50% 65%,#fff8b0 0 22%,#ffb52e 45%,#ff6b35 72%,transparent 75%);border-radius:50% 50% 45% 45%;filter:drop-shadow(0 0 12px #ffb52e);transform-origin:50% 90%;animation:flicker .5s infinite alternate;z-index:4}
+@keyframes flicker{to{transform:rotate(8deg) scale(.88);filter:drop-shadow(0 0 18px #ffcf65)}}
+.flame.out{opacity:0;transform:translateY(-12px) scale(.2);animation:none;transition:.35s}
+.berry{position:absolute;width:14px;height:14px;background:#e83f77;border-radius:50%;bottom:133px;z-index:4;box-shadow:inset -3px -3px 0 #a91f52}
+.berry.one{left:80px}.berry.two{left:177px;bottom:137px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:12px 0}
+button{border:0;border-radius:999px;padding:12px 19px;font-weight:750;font-size:.95rem;cursor:pointer;transition:transform .18s,filter .18s}
+button:hover{transform:translateY(-2px);filter:brightness(1.08)}
+.primary{color:#35162e;background:linear-gradient(90deg,#ffb0d3,#ffe29b);box-shadow:0 8px 22px #ff80b333}
+.secondary{color:white;background:#ffffff13;border:1px solid #ffffff35}
+.hint{font-size:.85rem;color:#d8c8e9;min-height:22px}
+.note{display:none;text-align:left;margin:24px auto 0;max-width:520px;padding:23px;border-radius:20px;background:linear-gradient(135deg,#fff0f7,#fff7db);color:#52264a;box-shadow:0 12px 35px #0003;animation:noteIn .9s cubic-bezier(.2,.9,.25,1.2) both}
+.note.show{display:block}
+@keyframes noteIn{from{opacity:0;transform:translateY(35px) scale(.9) rotate(-2deg)}to{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+.note h2{text-align:center;margin:0 0 12px;color:#c13d80}
+.note p{line-height:1.75;margin:8px 0}
+.signature{text-align:right;font-weight:800;color:#b43b78;margin-top:14px}
+.confetti-piece{position:absolute;top:-20px;width:9px;height:14px;animation:fall linear forwards;border-radius:2px}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(850deg);opacity:.8}}
+.hidden{display:none!important}
+.footer{font-size:.75rem;color:#bcaed0;margin-top:22px}
+@media(max-width:420px){.scene{height:255px;transform:scale(.92);margin-top:-5px;margin-bottom:-4px}.card{padding-inline:14px}.controls button{padding:11px 15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="starfield" id="stars"></div><div class="confetti" id="confetti"></div>
+<main class="card">
+  <span class="pill">A little birthday magic ✨</span>
+  <h1>Happy Birthday<br>Divya!</h1>
+  <p class="subtitle">A special day deserves a little sparkle, a sweet cake, and a wish made just for you. 💗</p>
+  <div class="scene" aria-label="Animated pink birthday cake with a candle">
+    <div class="cake-wrap" id="cake">
+      <div class="plate"></div>
+      <div class="layer bottom"></div><div class="layer middle"></div>
+      <div class="icing"><i class="drip"></i><i class="drip"></i><i class="drip"></i><i class="drip"></i></div>
+      <div class="berry one"></div><div class="berry two"></div>
+      <div class="candle"></div><div class="flame" id="flame"></div>
+    </div>
+  </div>
+  <div class="controls" id="startControls">
+    <button class="primary" id="lightBtn">🕯️ Make a wish</button>
+    <button class="secondary" id="musicBtn">♫ Play birthday tune</button>
+  </div>
+  <div class="controls hidden" id="cutControls">
+    <button class="primary" id="cutBtn">🔪 Cut the cake!</button>
+  </div>
+  <p class="hint" id="hint">Close your eyes, make a wish, then blow out the candle. 🌟</p>
+  <section class="note" id="note">
+    <h2>💌 A little note for Divya</h2>
+    <p>Dear Divya,</p>
+    <p>May your birthday bring you endless reasons to smile, people who make your heart feel full, and moments you’ll remember with happiness. May the year ahead open beautiful doors for you, bring you peace when life gets busy, courage when things feel difficult, and love in the little everyday moments.</p>
+    <p>Keep being your wonderful self, keep dreaming big, and never forget that you deserve all the good things life has to offer.</p>
+    <p><strong>Happy Birthday, Divya! 🎂💖</strong> May your wishes find their way to you, one by one.</p>
+    <div class="signature">With lots of good wishes ✨</div>
+  </section>
+  <div class="footer">Made with birthday magic, just for Divya ✨</div>
+</main>
+<script>
+const stars=document.getElementById('stars');
+for(let i=0;i<75;i++){const s=document.createElement('i');s.className='star';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';s.style.opacity=(.2+Math.random()*.7);stars.appendChild(s)}
+const flame=document.getElementById('flame'),hint=document.getElementById('hint');
+const cutControls=document.getElementById('cutControls'),note=document.getElementById('note');
+function confetti(count=100){const box=document.getElementById('confetti');const colors=['#ff70ad','#ffd166','#bda2ff','#8ee3d2','#fff1f7'];for(let i=0;i<count;i++){const p=document.createElement('i');p.className='confetti-piece';p.style.left=Math.random()*100+'%';p.style.background=colors[Math.floor(Math.random()*colors.length)];p.style.setProperty('--drift',((Math.random()-.5)*260)+'px');p.style.animationDuration=(2.3+Math.random()*2.8)+'s';p.style.animationDelay=(Math.random()*.5)+'s';box.appendChild(p);setTimeout(()=>p.remove(),6000)}}
+document.getElementById('lightBtn').addEventListener('click',()=>{hint.textContent='Wish made? Now blow out the candle! 💨';cutControls.classList.remove('hidden');confetti(35);document.getElementById('lightBtn').textContent='✨ Wish sent!';});
+flame.addEventListener('click',()=>blow());
+function blow(){flame.classList.add('out');hint.textContent='Wish sent into the universe! 💫 Time to cut the cake.';cutControls.classList.remove('hidden');confetti(45)}
+document.getElementById('cutBtn').addEventListener('click',()=>{document.getElementById('cake').style.transition='transform .6s';document.getElementById('cake').style.transform='rotate(-5deg) scale(.96)';setTimeout(()=>{document.getElementById('cake').style.transform='rotate(0) scale(1)';note.classList.add('show');hint.textContent='A little birthday note, with lots of love. 💌';confetti(150);document.getElementById('cutBtn').textContent='🎉 Cake cut!';document.getElementById('cutBtn').disabled=true;note.scrollIntoView({behavior:'smooth',block:'nearest'})},500)});
+let audioCtx=null,oscillators=[],musicOn=false;
+document.getElementById('musicBtn').addEventListener('click',async()=>{const btn=document.getElementById('musicBtn');if(musicOn){oscillators.forEach(o=>{try{o.stop()}catch(e){}});oscillators=[];musicOn=false;btn.textContent='♫ Play birthday tune';return}
+try{audioCtx=audioCtx||new(window.AudioContext||window.webkitAudioContext)();await audioCtx.resume();musicOn=true;btn.textContent='♫ Stop birthday tune';const melody=[392,392,440,392,523,494,392,392,440,392,587,523,392,392,784,659,523,494,440,698,698,659,523,587,523];melody.forEach((freq,i)=>{const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=freq;g.gain.setValueAtTime(.0001,audioCtx.currentTime+i*.28);g.gain.exponentialRampToValueAtTime(.11,audioCtx.currentTime+i*.28+.03);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+i*.28+.24);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+i*.28);o.stop(audioCtx.currentTime+i*.28+.26);oscillators.push(o)});setTimeout(()=>{musicOn=false;btn.textContent='♫ Play birthday tune';oscillators=[]},melody.length*280+400)}catch(e){hint.textContent='Your browser could not play the tune, but the birthday magic still works!'}});
+</script>
+</body>
+</html>
